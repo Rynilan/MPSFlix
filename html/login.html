@@ -1,0 +1,21 @@
+<header>
+	<h1>Login</h1>
+</header>
+<hr/>
+<form id='form' action='#' onsubmit='return false;'>
+	<label for="email">Email: </label>
+	<br/>
+	<div class='dummy'>
+		<i class="material-symbols-outlined">mail</i>
+		<input class='input' id='email' type="email" name="email" placeholder='email@email.com' required>
+	</div>
+	<br/>
+	<label for="senha">Senha: </label>
+	<br/>
+	<div class='dummy'>
+		<i class='material-symbols-outlined'>lock</i>
+		<input class='input' id='senha' type="password" name="senha" placeholder='Senha' pattern='^[^ç]{8,20}$' title='senha de 8 a 20 caracteres.' required>
+	</div>
+	<br/>
+	<input type="submit" id='enviar' name="enviar" value="Entrar">
+</form>

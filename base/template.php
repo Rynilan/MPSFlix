@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+		<title>MPSFlix</title>
+		<link href='<?=ROOT_URL?>css/default.css' rel="stylesheet">
+		<?php if (isset($custom_css)): ?>
+		<?php foreach ($custom_css as $sheet): ?>
+		<link href='<?=ROOT_URL.$sheet['path']?>' rel='stylesheet'>
+		<?php endforeach; ?>
+		<?php endif; ?>
+	</head>
+	<body>
+		<!-- Cabeçalho -->
+		<div id="head">
+			<div id='logo'>
+				<a href='<?=ROOT_URL?>index.php'>
+					<div  id='logo' title='MPSFlix'></div>
+				</a>
+			</div>
+			<div id='space'></div>
+			<div id='menuDiv'>
+				<button type="button" id='menuButton'><span class="material-symbols-outlined">menu</span></button>
+				<nav id='menuNav' class='hidden'>
+					<ul>
+						<li><a href="<?=ROOT_URL?>index.php"><span class='material-symbols-outlined'>home</span>Home</a></li>
+						<li><a href="<?=ROOT_URL?>page/info.php"><span class='material-symbols-outlined'>info</span>Sobre</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<!-- MainFrame -->
+		<div id='background'>
+			<div id='vinheta'>
+				<div id="main">
+					<?php echo (isset($conteudo)) ? $conteudo : file_get_contents(ROOT_URL.'html/40X/404.html'); ?>
+				</div>
+			</div>				
+		</div>
+
+		<!-- Rodapé -->
+		<div id="foot">
+			<center><p>Todos os direitos reservados à Marcela Paiva e Ilan Vitor.</p></center>
+			<center><p>Direito de uso dado a Rodrigo Santos.</p></center>
+			<center><a href='#head'><button id='subir'>Topo</button></a></center>
+		</div>
+		<script src='<?=ROOT_URL?>js/menu.js'></script>
+		<?php if (isset($custom_js)):?>
+		<?php foreach ($custom_js as $script):?>
+		<script src='<?=ROOT_URL.$script['path']?>'></script>
+		<?php endforeach; ?>
+		<?php endif;?>
+	</body>
+</html>

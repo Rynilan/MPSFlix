@@ -1,0 +1,157 @@
+/* Colocar a imagem de fundo a a vinheta em todas as telas. */
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+hr {
+	margin: 20px 0px;
+}
+body {
+	background-color: rgb(35, 38, 52);
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	padding: 0px;
+}
+#background {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	background-image: url('../img/background.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+#vinheta {
+	/* Uma div com id de vinheta */
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-image: radial-gradient(transparent 60%, #000 80%);
+	background-attachment: fixed;
+	position: relative;
+}
+
+/* Põe a div main no meio com margens */
+#main {
+	min-height: 40vh;
+	width: 85%;
+	background-color: rgba(35, 38, 52, 0.93);
+	margin: 3% auto;
+	border: none;
+	padding: 20px;
+	text-align: center;
+	border: 2px solid #182028;
+}
+
+/* Opções de cor de fonte. */
+a {
+	text-decoration: none;
+}
+h1 {
+	font-family: "Fascinate", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	color: crimson;
+}
+h2, p {
+	color: white
+}
+
+/* Cabeçalho */
+#head {
+	padding: 10px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: #232634; 
+	border: none;
+	border-bottom: 10px solid #182028;
+}
+#menuDiv {
+	position: relative;
+}
+#space {
+	flex-grow: 1;
+	background-color: transparent;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+}
+#menuButton {
+	background: none;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	font-size: 24px;
+	text-align: center;
+	color: #fff;
+	padding: 4px 4px 0px 4px;
+}
+.hidden {
+	display: none;
+}
+#menuNav {
+	position: absolute;
+	z-index: 1;
+	top: 100%;
+	right: 10%;
+	background-color: #232634;
+	border: 2px solid #303440;
+	border-radius: 5px;
+	padding: 0px;
+	margin: 0px;
+}
+#menuNav ul {
+	list-style-type: none;
+}
+#menuNav ul li {
+	padding: 6px 8px;
+}
+#menuNav ul li a {
+	text-align: left;
+	color: white;
+	text-decoration: none;
+	margin-left: -40px;
+	padding: 4px 4px;
+	border-bottom: 2px solid rgba(200, 200, 200, 0.8);
+}
+
+/* Estilização do rodapé */
+#foot {
+	padding: 10px;
+	width: 100%;
+	background-color: #232634; 
+	border: none;
+	border-top: 10px solid #182028;
+	position: relative;
+}
+
+/* Estilização da imagem da logo. */
+#logo {
+	background-image: url('../favicon.ico');
+	background-size: cover;
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+/* Estilização do botão do rodapé pra subir. */
+#subir {
+	font-weight: bold;
+	font-size: 14px;
+	width: 20%;
+	padding: 6px;
+	color: white;
+	background-color: #182028;
+	border: 2px solid #fff;
+	border-radius: 4px;
+}

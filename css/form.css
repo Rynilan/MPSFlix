@@ -1,0 +1,43 @@
+form label {
+	color: white;
+	font-size: 18px;
+	margin-bottom: 12px;
+}
+form input {
+	padding: 6px;
+	border-radius: 4px;
+	width: 30%;
+	min-width: 200px;
+}
+form input[type='email'], input[type='password'] {
+	background-color: #232634; 
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+}
+form input[type='submit'] {
+	background-color: crimson; 
+	font-size: 18px;
+	color: white;
+	font-family: 'Times New Roman', Times, Seif;
+	font-weight: bold;
+	border-radius: 8px;
+}
+.dummy {
+	margin: 0px auto;
+	width: 30%;
+	min-width: 200px;
+	position: relative;
+}
+.dummy i {
+	color: rgba(255, 255, 255, 0.5);
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	pointer-events: none;
+	transform: translateY(-50%);
+}
+.input {
+	width: 100%;
+	padding-left: 30px;	
+}
