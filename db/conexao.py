@@ -9,7 +9,7 @@ def conectar():
     ) as json:
         data = load(json)
     banco = connect(
-        **data['database']
+        **data['free_database']
     )
     cursor = banco.cursor()
     return banco, cursor
