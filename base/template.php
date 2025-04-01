@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Site para exibir arquivos .mp4 de um drive." />
+		<meta name="keyword" content="filmes, séries, filme, drive" />
+		<meta name="autor" content="Ilan Vitor e Marcela Paiva" />
+        <meta name="robots" content="all" />
+
 		<title>MPSFlix</title>
-		<link href='<?=ROOT_URL?>css/default.css' rel="stylesheet">
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+		<link href='<?=ROOT_URL?>css/default.css' rel="stylesheet" />
 		<?php if (isset($custom_css)): ?>
 		<?php foreach ($custom_css as $sheet): ?>
-		<link href='<?=ROOT_URL.$sheet['path']?>' rel='stylesheet'>
+		<link href='<?=ROOT_URL.$sheet['path']?>' rel='stylesheet' />
 		<?php endforeach; ?>
 		<?php endif; ?>
+
 	</head>
 	<body>
+
 		<!-- Cabeçalho -->
 		<div id="head">
 			<div id='logo'>
@@ -38,7 +47,7 @@
 				<div id="main">
 					<?php echo (isset($conteudo)) ? $conteudo : file_get_contents(ROOT_URL.'html/40X/404.html'); ?>
 				</div>
-			</div>				
+			</div>
 		</div>
 
 		<!-- Rodapé -->
@@ -53,5 +62,6 @@
 		<script src='<?=ROOT_URL.$script['path']?>'></script>
 		<?php endforeach; ?>
 		<?php endif;?>
+
 	</body>
 </html>

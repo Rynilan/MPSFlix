@@ -1,3 +1,6 @@
+raise Exception('Deprecated.')
+
+
 from conexao import conectar
 from hashlib import sha256
 from sys import argv
