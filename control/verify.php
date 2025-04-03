@@ -9,6 +9,7 @@ try {
     $resultado['mensagem'] = '';
     $resultado['nome'] = '';
     $resultado['email'] = '';
+	$resultado['url'] = '';
 
     include '../db/autenticar.php';
     if (isset($data)) {
@@ -19,7 +20,8 @@ try {
             $_SESSION['autenticado'] = $data['sucesso'];
             $resultado['sucesso'] = true;
             $resultado['nome'] = $data['nome'];
-            $resultado['email'] = $data['email'];
+			$resultado['email'] = $data['email'];
+			$resultado['url'] = ROOT_URL.'page/main.php';
         }
     }
 } catch (Exception $erro) {

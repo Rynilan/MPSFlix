@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		.then(data => {
 			if (data.sucesso) {
 				alert("Bem vindo(a) " + data.nome); 
-				window.location.href = 'https://localhost/MPSFlix/page/main.php';
+				window.location.href = data.url;
 			} else {
 				alert(data.mensagem);
 			}
