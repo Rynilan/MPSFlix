@@ -1,19 +1,21 @@
 <?php
 $json = file_get_contents('../info.json');
-$data = json_decode($json, true)['free_database'];
+$data = json_decode($json, true)['database'];
 unset($json);
 
-$host = $data['host'];
+$host = $data['host'].':3306';
 $name = $data['database'];
 $dsn = 'mysql:host='.$host.';dbname='.$name;
 $user = $data['user'];
 $pass = $data['password'];
 
 try {
-    $conn = new PDO($dsn, $user, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+$conexao = new mysqli($host, $user, $pass, $name);
+} catch (mysqli_sql_exception $e) {
+    echo $e->getMessage();
+}
+// Check connection
+if ($conexao->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
