@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		let email = inputEmail.value;
 		let senha = inputSenha.value;
 
-		fetch('control/verify.php', {
+		fetch('../control/verify.php', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
