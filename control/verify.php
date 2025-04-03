@@ -1,8 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 try {
 	include '../config/path.php';
 	$email = $_POST['email'];
@@ -14,16 +11,17 @@ try {
     $resultado['email'] = '';
 
     include '../db/autenticar.php';
-
-	if (isset($data['sucesso']) && $data['sucesso']) {
-		session_start();
-		$_SESSION['email'] = $data['email'];
-		$_SESSION['nome'] = $data['nome'];
-		$_SESSION['autenticado'] = $data['sucesso'];
-        $resultado['sucesso'] = true;
-        $resultado['nome'] = $data['nome'];
-        $resultado['email'] = $data['email'];
-	}
+    if (isset($data)) {
+        if ($data['sucesso']) {
+            session_start();
+            $_SESSION['email'] = $data['email'];
+            $_SESSION['nome'] = $data['nome'];
+            $_SESSION['autenticado'] = $data['sucesso'];
+            $resultado['sucesso'] = true;
+            $resultado['nome'] = $data['nome'];
+            $resultado['email'] = $data['email'];
+        }
+    }
 } catch (Exception $erro) {
 	$resultado = [
 		'mensagem' => $erro->getMessage(),
