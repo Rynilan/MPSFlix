@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		.then(response => {
 			if (!response.ok) {
 				alert('Algum erro interno aconteceu.');
-				console.log(response);
 				return;
 			}
 			return response.json();
