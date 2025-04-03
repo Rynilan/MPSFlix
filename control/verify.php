@@ -1,27 +1,37 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 try {
 	include '../config/path.php';
 	$email = $_POST['email'];
 	$senha = $_POST['senha'];
 
-	$stdout = shell_exec(escapeshellcmd('python3 '.escapeshellarg(ROOT_PATH.'db/getUserData.py').' '.escapeshellarg($email).' '.escapeshellarg($senha).' ;'));
-	$data = json_decode($stdout, true);
+    $resultado['sucesso'] = false;
+    $resultado['mensagem'] = '';
+    $resultado['nome'] = '';
+    $resultado['email'] = '';
 
+    include '../db/autenticar.php';
 
 	if (isset($data['sucesso']) && $data['sucesso']) {
 		session_start();
 		$_SESSION['email'] = $data['email'];
 		$_SESSION['nome'] = $data['nome'];
 		$_SESSION['autenticado'] = $data['sucesso'];
+        $resultado['sucesso'] = true;
+        $resultado['nome'] = $data['nome'];
+        $resultado['email'] = $data['email'];
 	}
 } catch (Exception $erro) {
-	$data = [
+	$resultado = [
 		'mensagem' => $erro->getMessage(),
 		'sucesso' => false,
 		'nome' => '',
 		'email' => ''
 	];
 }
-echo json_encode($data);
+echo json_encode($resultado);
 ?>
 
