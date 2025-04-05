@@ -14,6 +14,14 @@ $conexao = new mysqli($host, $user, $pass, $name);
 } catch (mysqli_sql_exception $e) {
     echo $e->getMessage();
 }
+
+unset($host);
+unset($name);
+unset($dsn);
+unset($user);
+unset($pass);
+unset($data);
+
 // Check connection
 if ($conexao->connect_error) {
     die("Connection failed: " . $conn->connect_error);
