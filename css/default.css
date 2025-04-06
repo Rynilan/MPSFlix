@@ -1,5 +1,5 @@
 /* Colocar a imagem de fundo a a vinheta em todas as telas. */
-@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
 * {
 	padding: 0px;
 	margin: 0px;
@@ -57,7 +57,7 @@ a {
 	text-decoration: none;
 }
 h1 {
-	font-family: "Fascinate", system-ui;
+	font-family: "New Rocker", system-ui;
 	font-weight: 400;
 	font-style: normal;
 	color: crimson;
@@ -72,19 +72,13 @@ h2, p {
 	width: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	background-color: #232634; 
 	border: none;
 	border-bottom: 10px solid #182028;
 }
 #menuDiv {
 	position: relative;
-}
-#space {
-	flex-grow: 1;
-	background-color: transparent;
-	border: none;
-	margin: 0px;
-	padding: 0px;
 }
 #menuButton {
 	background: none;

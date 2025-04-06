@@ -29,7 +29,6 @@
 					<div  id='logo' title='MPSFlix'></div>
 				</a>
 			</div>
-			<div id='space'></div>
 			<div id='menuDiv'>
 				<button type="button" id='menuButton'><span class="material-symbols-outlined">menu</span></button>
 				<nav id='menuNav' class='hidden'>
