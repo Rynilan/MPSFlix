@@ -4,7 +4,9 @@ include '../config/path.php';
 
 if ($_SESSION['autenticado']) {
 	$conteudo = file_get_contents(ROOT_PATH.'html/main.html');
-	$custom_css = [];
+	$custom_css = [
+		['path' => 'css/main_page.css']	
+	];
 	$custom_js = [
 		['path' => 'js/titulo.js'],
 		['path' => 'js/loadMedia.js']
