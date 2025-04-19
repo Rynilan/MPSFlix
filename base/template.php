@@ -5,7 +5,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Site para exibir arquivos .mp4 de um drive." />
-		<meta name="keyword" content="filmes, séries, filme, drive" />
 		<meta name="autor" content="Ilan Vitor e Marcela Paiva" />
         <meta name="robots" content="all" />
 
@@ -51,7 +50,7 @@
 
 		<!-- Rodapé -->
 		<div id="foot">
-			<center><p>Todos os direitos reservados à Marcela Paiva e Ilan Vitor.</p></center>
+			<center><p>&copy; Todos os direitos reservados a Marcela Paiva e Ilan Vitor.</p></center>
 			<center><p>Direito de uso dado a Rodrigo Santos.</p></center>
 			<center><a href='#head'><button id='subir'>Topo</button></a></center>
 		</div>
