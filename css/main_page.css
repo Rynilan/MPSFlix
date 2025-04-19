@@ -1,0 +1,43 @@
+#main-flex {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;	
+}
+.card {
+	border-radius: 10px;
+	background-color: #182028;
+	border: 3px solid #303440;
+	min-width: 150px;
+	min-height: 200px;
+	width: 18%;
+	aspect-ratio: 3 / 5;
+	position: relative;
+}
+.card:hover {
+	background-color: crimson;
+	border: 3px solid crimson;
+	outline: 2px solid #fff;
+	transition: 0.4s;
+	transform: scale(1.05);
+}
+.card img {
+	border-radius: 10px;
+	width: 90%;
+	height: 75%;
+	margin: 5% 0px 0px 0px;
+}
+.card p {
+	font-size: 0.7rem;
+}
+.card i {
+	color: #fff;
+	font-size: 0.7rem;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	padding: 2px;
+	border-radius: 50%;
+	background-color: rgba(35, 38, 52, 0.5);
+}
