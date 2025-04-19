@@ -1,5 +1,13 @@
-/* Colocar a imagem de fundo a a vinheta em todas as telas. */
+/* Importanto a fonte externa e definindo as variáveis de ambiente */
 @import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+:root {
+	--darker-bg: #182028;
+	--default-bg: #232634;
+	--lighter-bg: #303440;
+	--default-bg-rgba: rgba(35, 38, 52, 0.9);
+}
+
+/* Configuração generalista */
 * {
 	padding: 0px;
 	margin: 0px;
@@ -8,8 +16,10 @@
 hr {
 	margin: 20px 0px;
 }
+
+/* Configuração do plano de fundo */
 body {
-	background-color: rgb(35, 38, 52);
+	background-color: var(--default-bg);
 	width: 100%;
 	min-height: 100%;
 	display: flex;
@@ -44,12 +54,12 @@ body {
 #main {
 	min-height: 40vh;
 	width: 85%;
-	background-color: rgba(35, 38, 52, 0.93);
+	background-color: var(--default-bg-rgba);
 	margin: 3% auto;
 	border: none;
 	padding: 20px;
 	text-align: center;
-	border: 2px solid #182028;
+	border: 2px solid var(--darker-bg);
 }
 
 /* Opções de cor de fonte. */
@@ -73,9 +83,9 @@ h2, p {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #232634; 
+	background-color: var(--default-bg); 
 	border: none;
-	border-bottom: 10px solid #182028;
+	border-bottom: 10px solid var(--darker-bg);
 }
 #menuDiv {
 	position: relative;
@@ -97,8 +107,8 @@ h2, p {
 	z-index: 1;
 	top: 100%;
 	right: 10%;
-	background-color: #232634;
-	border: 2px solid #303440;
+	background-color: var(--default-bg);
+	border: 2px solid var(--lighter-bg);
 	border-radius: 5px;
 	padding: 0px;
 	margin: 0px;
@@ -122,9 +132,9 @@ h2, p {
 #foot {
 	padding: 10px;
 	width: 100%;
-	background-color: #232634; 
+	background-color: var(--default-bg); 
 	border: none;
-	border-top: 10px solid #182028;
+	border-top: 10px solid var(--darker-bg);
 	position: relative;
 }
 
@@ -145,7 +155,7 @@ h2, p {
 	width: 20%;
 	padding: 6px;
 	color: white;
-	background-color: #182028;
+	background-color: var(--darker-bg);
 	border: 2px solid #fff;
 	border-radius: 4px;
 }
