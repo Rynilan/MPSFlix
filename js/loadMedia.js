@@ -7,8 +7,8 @@ function createPoster(midiaNome, baseUrl, visto) {
 			<a href='${baseUrl}reprodutor.php/${imgName}'>
 				<img src='../img/posters/${imgName}.jpg'/ title='${midiaNome}'>
 				<p title='${midiaNome}'>${midiaNome}</p>
-				<i class='material-symbols-outlined' title='${(visto)?'Assistido':'Não assistido'}'>${viewed}</i>
-			</a>
+				<i class='material-symbols-outlined ${viewed}' title='${(visto)?'Assistido':'Não assistido'}'>${viewed}</i>
+			</a>''
 		</div>
 `;
 }
