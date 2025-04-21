@@ -1,7 +1,12 @@
 <?php
 include '../config/path.php';
 include 'conexao.php';
-$query = $conexao->query("select nome from tb_filmes union select nome from tb_series order by nome;");
+$query = $conexao->query("
+	select id_filme as id, nome, 'filme' as tipo from tb_filmes
+    union
+    select id_serie as id, nome, 'serie' as tipo from tb_series
+	order by nome;
+");
 
 $index = 0;
 $data = [
