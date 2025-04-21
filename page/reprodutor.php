@@ -2,7 +2,7 @@
 session_start();
 include '../config/path.php';
 
-if ($_SESSION['autenticado'] || true) {
+if ($_SESSION['autenticado']) {
 	$conteudo = file_get_contents(ROOT_PATH.'html/reprodutor.html');
 	$custom_css = [
 		['path' => 'css/reprodutor.css'],
@@ -11,7 +11,9 @@ if ($_SESSION['autenticado'] || true) {
 		['path' => 'js/loadMediaInfo.js'],
 	];
 } else {
-	$conteudo = file_get_contents(ROOT_PATH.'html/40X/401.html');
+	http_response_code(401);
+	header("Location: ".ROOT_URL."page/error.php?code_error=401");
+	exit();
 }
 include '../base/template.php';
 ?>

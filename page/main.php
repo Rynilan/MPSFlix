@@ -13,7 +13,9 @@ if ($_SESSION['autenticado']) {
 		['path' => 'js/loadMedia.js']
 	];
 } else {
-	$conteudo = file_get_contents(ROOT_PATH.'html/40X/401.html');
+	http_response_code(401);
+	header("Location: ".ROOT_URL."page/error.php?code_error=401");
+	exit();
 }
 
 include ROOT_PATH.'base/template.php';

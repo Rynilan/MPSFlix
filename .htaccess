@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /MPSFlix/
+
+RewriteRule ^(base|db|config)/.*$ http://localhost/MPSFlix/page/error.php?code_error=403 [R=301,L]
+
+RewriteCond %{REQUEST_URI} \.(sql|json)$ [NC]
+RewriteRule ^(.*)$ http://localhost/MPSFlix/page/error.php?code_error=403 [R=301,L]
+
+ErrorDocument 404 http://localhost/MPSFlix/page/error.php?code_error=404
+ErrorDocument 403 http://localhost/MPSFlix/page/error.php?code_error=403
+ErrorDocument 401 http://localhost/MPSFlix/page/error.php?code_error=401
+ErrorDocument 500 http://localhost/MPSFlix/page/error.php?code_error=500

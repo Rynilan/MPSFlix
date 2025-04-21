@@ -43,7 +43,7 @@
 		<div id='background'>
 			<div id='vinheta'>
 				<div id="main">
-					<?php echo (isset($conteudo)) ? $conteudo : file_get_contents(ROOT_URL.'html/40X/404.html'); ?>
+					<?php echo (isset($conteudo)) ? $conteudo : http_response_code(404); exit(); ?>
 				</div>
 			</div>
 		</div>
