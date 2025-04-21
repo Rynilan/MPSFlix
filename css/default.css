@@ -33,11 +33,16 @@ body {
 	flex-direction: column;
 	width: 100%;
 	min-height: 100vh;
-	background-image: url('../img/background.png');
+	background-image: url('../img/bg_landscape.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+}
+@media (orientation: portrait) {
+	#background {
+		background-image: url('../img/bg_portrait.png');
+	}
 }
 #vinheta {
 	/* Uma div com id de vinheta */
