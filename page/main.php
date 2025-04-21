@@ -9,6 +9,7 @@ if ($_SESSION['autenticado']) {
 	];
 	$custom_js = [
 		['path' => 'js/titulo.js'],
+        ['path' => 'js/redirect.js'],
 		['path' => 'js/loadMedia.js']
 	];
 } else {
