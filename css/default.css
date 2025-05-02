@@ -85,17 +85,21 @@ h2, p {
 #head {
 	padding: 10px;
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	background-color: var(--default-bg); 
 	border: none;
 	border-bottom: 10px solid var(--darker-bg);
 }
-#menuDiv {
-	position: relative;
+#header {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	width: 100%;
+	background-color: var(--default-bg); 
+	border: none;
+	justify-content: space-between;
 }
 #menuButton {
+	cursor: pointer;
 	background: none;
 	border: 2px solid #fff;
 	border-radius: 5px;
@@ -108,29 +112,53 @@ h2, p {
 	display: none;
 }
 #menuNav {
-	position: absolute;
-	z-index: 1;
-	top: 100%;
-	right: 10%;
+	width: 100%;
 	background-color: var(--default-bg);
-	border: 2px solid var(--lighter-bg);
 	border-radius: 5px;
 	padding: 0px;
 	margin: 0px;
 }
 #menuNav ul {
+	border: 0px solid black;
 	list-style-type: none;
+	display: flex;
+	gap: 30px;
+	justify-content: space-around;
+	align-items: center
 }
 #menuNav ul li {
-	padding: 6px 8px;
+	cursor: pointer;
 }
 #menuNav ul li a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	border: 2px solid var(--lighter-bg);
 	text-align: left;
 	color: white;
 	text-decoration: none;
-	margin-left: -40px;
-	padding: 4px 4px;
+	padding: 8px 8px;
 	border-bottom: 2px solid rgba(200, 200, 200, 0.8);
+}
+#menuNav ul li:hover a {
+	background-color: var(--darker-bg);
+	border: 2px solid var(--lighter-bg);
+	transform: scale(1.1);
+	transition: 0.4s;
+	font-weight: bold;
+}
+@media (orientation: portrait) {
+	#menuNav ul {
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+	}
+	#menuNav ul li {
+		width: 80%;
+	}
 }
 
 /* Estilização do rodapé */

@@ -26,19 +26,21 @@ ini_set('display_errors', 1);
 
 		<!-- Cabeçalho -->
 		<div id="head">
-			<div id='logo'>
-				<a href='<?=ROOT_URL?>index.php'>
-					<div  id='logo' title='MPSFlix'></div>
-				</a>
+			<div id='header'>
+				<div id='logo'>
+					<a href='<?=ROOT_URL?>index.php'>
+						<div  id='logo' title='MPSFlix'></div>
+					</a>
+				</div>
+				<div id='buttonDiv'>
+					<button type="button" id='menuButton'><span class="material-symbols-outlined">menu</span></button>
+				</div>
 			</div>
-			<div id='menuDiv'>
-				<button type="button" id='menuButton'><span class="material-symbols-outlined">menu</span></button>
-				<nav id='menuNav' class='hidden'>
-					<ul>
-						<li><a href="<?=ROOT_URL?>index.php"><span class='material-symbols-outlined'>home</span>Home</a></li>
-						<li><a href="<?=ROOT_URL?>page/info.php"><span class='material-symbols-outlined'>info</span>Sobre</a></li>
-					</ul>
-				</nav>
+			<div id='menuNav' class='hidden'>
+				<ul>
+					<li><a href="<?=ROOT_URL?>index.php"><span class='material-symbols-outlined'>home</span>Home</a></li>
+					<li><a href="<?=ROOT_URL?>page/info.php"><span class='material-symbols-outlined'>info</span>Sobre</a></li>
+				</ul>
 			</div>
 		</div>
 
