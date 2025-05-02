@@ -1,3 +1,6 @@
+<?php error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -43,7 +46,7 @@
 		<div id='background'>
 			<div id='vinheta'>
 				<div id="main">
-					<?php echo (isset($conteudo)) ? $conteudo : http_response_code(404); exit(); ?>
+					<?php if (isset($conteudo)) { echo $conteudo; } else { http_response_code(404); exit();} ?>
 				</div>
 			</div>
 		</div>
