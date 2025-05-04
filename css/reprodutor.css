@@ -17,11 +17,11 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: space-around;
+    align-items: center;
 }
 #capsula_info > p {
     margin: 10px auto 10px 0px;
-    text-justify: justify;
+    text-align: justify;
 }
 
 table {
