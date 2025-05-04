@@ -1,17 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     const ROOT_PATH = window.location.origin + "/MPSFlix/";
 	const PAGE_NAME = window.location.pathname.split('/').pop().slice(0, -4);
+	const GET_ARGS = new URLSearchParams(window.location.search);
+	let code_error = GET_ARGS.get("code_error");
 
     document.querySelectorAll("a").forEach(link => {
         if (link.getAttribute("href") && !link.getAttribute("href").startsWith("http")) {
             link.href = ROOT_PATH + link.getAttribute("href");
         }
     });
-
-	fetch('../control/pageAssets.php?page=' + PAGE_NAME)
+	console.log(ROOT_PATH + 'control/pageAssets.php?page=' + PAGE_NAME + ((code_error)? ('&code=' + code_error) :''))
+	fetch(ROOT_PATH + 'control/pageAssets.php?page=' + PAGE_NAME + ((code_error)? ('&code=' + code_error) :''))
 		.then(resposta => {
 			if (!resposta.ok) {
-				throw new Error('Erro na resposta http.');
+				throw new Error(`Erro na resposta http ${resposta.status}.`);
 			}
 			return resposta.json()
 		})
@@ -21,20 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			loadScripts(data.js);
 		})
 		.catch(erro => {
-			window.location.href = ROOT_PATH + 'page/error.php?code_error=500';
+			console.error(erro.message);
+			//window.location.href = ROOT_PATH + 'page/error.php?code_error=500';
 		})
 });
 
-function loadContent(url, target) {
-    fetch(url)
-        .then(response => {
-            if (!response.ok) throw new Error("Error loading content");
-            return response.text();
-        })
-        .then(data => document.querySelector(target).innerHTML = data)
+function loadContent(data, target) {
+	document.querySelector(target).innerHTML = data
 }
 
 function loadStyles(styles) {
+    const ROOT_PATH = window.location.origin + "/MPSFlix/";
     styles.forEach(style => {
         let link = document.createElement("link");
         link.rel = "stylesheet";
@@ -44,6 +43,7 @@ function loadStyles(styles) {
 }
 
 function loadScripts(scripts) {
+    const ROOT_PATH = window.location.origin + "/MPSFlix/";
     scripts.forEach(script => {
         let scriptTag = document.createElement("script");
         scriptTag.src = ROOT_PATH + 'js/' + script + '.js';
