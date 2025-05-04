@@ -16,15 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			return resposta.json()
 		})
 		.then(data => {
-			loadContent(
-				ROOT_PATH + 'html/' + PAGE_NAME + '.html',
-				'#main'
-			);
-			loadStyles([ROOT_PATH + "css/default.css", ROOT_PATH + 'css/form.css']);
-			loadScripts([ROOT_PATH + "js/menu.js"]);
+			loadContent(data.html, '#main');
+			loadStyles(data.css);
+			loadScripts(data.js);
 		})
 		.catch(erro => {
-			//window.location.href = ROOT_PATH + 'page/error.php?code_error=500';
+			window.location.href = ROOT_PATH + 'page/error.php?code_error=500';
 		})
 });
 
@@ -35,17 +32,13 @@ function loadContent(url, target) {
             return response.text();
         })
         .then(data => document.querySelector(target).innerHTML = data)
-        .catch(error => {
-            console.error(error);
-            window.location.href = ROOT_PATH + "page/error.html?code_error=500"; // Redirect on failure
-        });
 }
 
 function loadStyles(styles) {
     styles.forEach(style => {
         let link = document.createElement("link");
         link.rel = "stylesheet";
-        link.href = style;
+        link.href = ROOT_PATH + 'css/' + style + '.css';
         document.head.appendChild(link);
     });
 }
@@ -53,7 +46,7 @@ function loadStyles(styles) {
 function loadScripts(scripts) {
     scripts.forEach(script => {
         let scriptTag = document.createElement("script");
-        scriptTag.src = script;
+        scriptTag.src = ROOT_PATH + 'js/' + script + '.js';
         document.body.appendChild(scriptTag);
     });
 }
