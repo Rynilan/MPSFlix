@@ -13,43 +13,39 @@ function createPoster(midiaNome, baseUrl, visto, tipo, id) {
 `;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+fetch('../control/getMidia.php', {
+	method: 'POST',
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded'
+	},
+	body: ``
+})
 
-	fetch('../control/getMidia.php', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded'
-		},
-		body: ``
-	})
+.then(response => {
+	if (!response.ok) {
+		alert('Algum erro interno aconteceu.');
+		return;
+	}
+	return response.json();
+})
 
-	.then(response => {
-		if (!response.ok) {
-			alert('Algum erro interno aconteceu.');
-			return;
-		}
-		return response.json();
-	})
+.then(data => {
+	if (!data.sucesso) {
+		alert(data.mensagem);
+	} else {
+		data.midia.forEach(midia => {
+			createPoster(
+					midia.nome,
+					data.base_url,
+					false,
+					midia.tipo,
+					midia.id
+				);
+		});
+	}
+})
 
-	.then(data => {
-		if (!data.sucesso) {
-			alert(data.mensagem);
-		} else {
-			data.midia.forEach(midia => {
-                createPoster(
-						midia.nome,
-						data.base_url,
-						false,
-						midia.tipo,
-						midia.id
-					);
-            });
-		}
-	})
-
-	.catch(erro => {
-		console.error("Erro: ", erro);
-		alert("Houve um problema.");
-	});
-
+.catch(erro => {
+	console.error("Erro: ", erro);
+	alert("Houve um problema.");
 });
