@@ -24,7 +24,7 @@ unset($data);
 
 // Check connection
 if ($conexao->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conexao->connect_error);
 } else {
     $conexao->set_charset('utf8');
 }
