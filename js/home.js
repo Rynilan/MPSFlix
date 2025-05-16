@@ -1,5 +1,5 @@
 let redirect = document.getElementById('home_redirect');
-fetch('../control/getBaseUrl.php', {
+fetch('../control/getHomeUrl.php', {
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/x-www-form-urlencoded'
@@ -13,7 +13,7 @@ fetch('../control/getBaseUrl.php', {
 		return response.json();
 	})
 	.then(data => {
-		redirect.addEventListener('click', function() {window.location.href = data.base_url + 'page/login.php'});
+		redirect.addEventListener('click', function() {window.location.href = data.url});
 	})
 	.catch(erro => {
 		console.error("Erro: ", erro);
