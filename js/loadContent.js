@@ -3,7 +3,6 @@ function loadContent(data, target) {
 }
 
 function loadStyles(styles) {
-    const ROOT_PATH = window.location.origin + "/MPSFlix/";
     styles.forEach(style => {
         let link = document.createElement("link");
         link.rel = "stylesheet";
@@ -13,7 +12,6 @@ function loadStyles(styles) {
 }
 
 function loadScripts(scripts) {
-    const ROOT_PATH = window.location.origin + "/MPSFlix/";
     scripts.forEach(script => {
         let scriptTag = document.createElement("script");
         scriptTag.src = ROOT_PATH + 'js/' + script + '.js';
@@ -22,7 +20,7 @@ function loadScripts(scripts) {
 }
 
 
-const ROOT_PATH = window.location.origin + "/MPSFlix/";
+const ROOT_PATH = window.location.origin; // Para testes em localhost concatenar "/MPSFlix/"
 const PAGE_NAME = window.location.pathname.split('/').pop().slice(0, -4);
 const GET_ARGS = new URLSearchParams(window.location.search);
 let code_error = GET_ARGS.get("code_error");

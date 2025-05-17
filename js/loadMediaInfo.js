@@ -27,7 +27,7 @@ fetch('../control/getMidiaInfo.php' + arg, {
 })
 
 .then(data => {
-    document.getElementById('midia_titulo').innerHTML = data.nome;
+    document.getElementById('titulo').innerHTML = data.nome;
     document.getElementById('midia_descricao').innerHTML = document.getElementById('midia_descricao').innerHTML + data.sinopse;
     document.getElementById('midia_duracao').innerHTML = '<b>' + ((data.duracao.includes(':')) ? 'Duração: ' + data.duracao : data.duracao + ' temporada(s)') + '</b>';
     document.getElementById('midia_image').src = window.location.href.split('.com')[0] + '.com/img/posters/' + data.nome.toLowerCase().replace(/ /g, '_') + '.jpg';
