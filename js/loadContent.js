@@ -20,7 +20,7 @@ function loadScripts(scripts) {
 }
 
 
-const ROOT_PATH = window.location.origin; // Para testes em localhost concatenar "/MPSFlix/"
+const ROOT_PATH = window.location.origin + '/MPSFlix/'; // Para testes em localhost concatenar "/MPSFlix/"
 const PAGE_NAME = window.location.pathname.split('/').pop().slice(0, -4);
 const GET_ARGS = new URLSearchParams(window.location.search);
 let code_error = GET_ARGS.get("code_error");

@@ -27,6 +27,7 @@ fetch('../control/getMidiaInfo.php' + arg, {
 })
 
 .then(data => {
+		console.log(data);
     document.getElementById('titulo').innerHTML = data.nome;
     document.getElementById('midia_descricao').innerHTML = document.getElementById('midia_descricao').innerHTML + data.sinopse;
     document.getElementById('midia_duracao').innerHTML = '<b>' + ((data.duracao.includes(':')) ? 'Duração: ' + data.duracao : data.duracao + ' temporada(s)') + '</b>';

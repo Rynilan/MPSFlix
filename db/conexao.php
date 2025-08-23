@@ -1,6 +1,6 @@
 <?php
 $json = file_get_contents('../info.json');
-$data = json_decode($json, true)['database']; // Para testes use 'database_local'
+$data = json_decode($json, true)['database_local']; // Para testes use 'database_local'
 unset($json);
 
 $host = $data['host'].':3306';
