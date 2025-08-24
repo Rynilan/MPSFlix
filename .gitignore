@@ -1,4 +1,4 @@
 *.json
 *.zip
 *.tar
-database_and_data.sql
+data.sql
