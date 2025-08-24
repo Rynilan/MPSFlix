@@ -47,3 +47,4 @@ fetch(ROOT_PATH + 'control/pageAssets.php?page=' + PAGE_NAME + ((code_error)? ('
 		console.error(erro.message);
 		window.location.href = ROOT_PATH + 'page/error.php?code_error=500';
 	});
+fetch('../control/getHomeUrl.php').then(response => response.json()).then(data => {document.getElementById('logoLink').href = data.url});
