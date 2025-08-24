@@ -49,10 +49,13 @@ td {
     background-color: #888;
     color: white;
 }
-th {
+th, .divisao {
     background-color: #444;
-    color: #888;
+    color: #bbb;
     font-size: 2rem;
+}
+.divisao {
+	background-color: #666;
 }
 
 @media (max-width: 918px) {
